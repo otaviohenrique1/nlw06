@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { ReactNode } from 'react';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 >Ola mundo</h1>
+      {/* <a href="" target="_blank"></a> */}
+      <Botao2>
+        <Botao/>
+      </Botao2>
     </div>
   );
 }
 
 export default App;
+
+function Botao() {
+  return (
+    <button style={styles}>Teste</button>
+  );
+}
+
+const styles: React.CSSProperties = {
+  color: 'red',
+  backgroundColor: 'lightblue'
+};
+
+type BotaoProps = { 
+    children: ReactNode;
+}
+
+function Botao2(props: BotaoProps) {
+  return (
+    <div style={{ backgroundColor: 'lightblue' }}>{props.children}</div>
+  );
+}
