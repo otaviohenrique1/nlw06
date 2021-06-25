@@ -22,5 +22,5 @@ function App() {
 export default App;
 
 /*
-  [ReactJS] Aula 03 –> Tempo -> 00:14:18
+  [ReactJS] Aula 03 –> Tempo -> 00:44:58
 */

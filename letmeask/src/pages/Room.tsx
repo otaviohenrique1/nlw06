@@ -1,9 +1,16 @@
 import React from 'react';
+import logoImg from "../assets/images/logo.svg";
 
 export function Room() {
   return (
-    <div>
-      <h1>Room</h1>
+    <div id="page-room">
+      <header>
+        <div className="content">
+          <img src={logoImg} alt="Letmeask" />
+          <div>codigo</div>
+        </div>
+      </header>
+      <main className="content"></main>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import '../styles/auth.scss';
 import { Button } from '../components/Button';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 export function Home() {
   const history = useHistory();
@@ -22,6 +23,19 @@ export function Home() {
 
   async function handleJoinRoom(event: FormEvent) {
     event.preventDefault();
+
+    if (roomCode.trim() === '') {
+      return;
+    }
+    
+    const roomRef = await database.ref(`/rooms/${roomCode}`).get();
+
+    if (!roomRef.exists()) {
+      alert('Room does not exists');
+      return;
+    }
+    
+    history.push(`/rooms/${roomCode}`);
   }
 
   return (
